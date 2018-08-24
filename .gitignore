@@ -1,0 +1,6 @@
+public-php/config/*
+public-php/vendor
+public/
+yarn-error.log
+.history
+node_modules

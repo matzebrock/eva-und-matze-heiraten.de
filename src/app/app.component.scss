@@ -1,0 +1,118 @@
+:host {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+}
+
+header {
+    height: 300px;
+    width: 100%;
+    background: url(/assets/header-background.jpg) no-repeat center bottom #7e085a;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family: "Parisienne", cursive;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+h1 {
+    color: #fff;
+    font-size: 6em;
+    align-self: center;
+    display: inline-flex;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    line-height: 1.7em;
+    color: #7e085a;
+}
+
+h3 {
+	font-size: 1.7em;
+    color: #7e085a;
+    line-height: 1.7em;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-self: flex-end;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+
+    a {
+        padding: 10px 20px 5px 20px;
+        font-size: 2em;
+        text-decoration: none;
+        color: #000;
+
+        &:hover, &.active {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+    }
+}
+
+.content {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+}
+
+.separator {
+	margin-top: 20px;
+	margin-bottom: 20px;
+    position: relative;
+    color: #7e085a;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.separator::before {
+	background-color: #fff;
+    display: inline-block;
+    min-width: 100px;
+    content: "";
+}
+
+.separator::after {
+	content: "";
+    position: absolute;
+    left: -100%;
+    border-top: 2px solid rgba(126, 8, 90, 0.6);
+    width: 300%;
+    top: 50%;
+    z-index: -1;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+	#wrapper {
+		font-size: 9px;
+	}
+
+}
+
+@media only screen
+  and (min-device-height: 320px)
+  and (max-device-height: 480px) {
+	#wrapper {
+		font-size: 9px;
+	}
+}
