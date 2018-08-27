@@ -77,7 +77,7 @@ export class UploadComponent implements OnInit {
             label: "Mischa &amp; Lena Brammer",
             sort: "brammer"
         },
-        { value: "sven", label: "Sven Ambros &amp; Jana", sort: "ambros" }
+        { value: "sven", label: "Sven Ambros &amp; Jana Schnitger", sort: "ambros" }
     ];
 
     constructor() {
