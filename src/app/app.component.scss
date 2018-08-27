@@ -10,7 +10,8 @@
 header {
     height: 300px;
     width: 100%;
-    background: url(/assets/header-background.jpg) no-repeat center bottom #7e085a;
+    background: url(/assets/header-background.jpg) no-repeat center bottom
+        #7e085a;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -19,7 +20,8 @@ header {
     position: relative;
 }
 
-h1 {
+h1,
+::ng-deep h1 {
     color: #fff;
     font-size: 6em;
     align-self: center;
@@ -27,14 +29,16 @@ h1 {
     text-align: center;
 }
 
-h2 {
+h2,
+::ng-deep h2 {
     font-size: 2.5em;
     line-height: 1.7em;
     color: #7e085a;
 }
 
-h3 {
-	font-size: 1.7em;
+h3,
+::ng-deep h3 {
+    font-size: 1.7em;
     color: #7e085a;
     line-height: 1.7em;
 }
@@ -57,7 +61,8 @@ nav {
         text-decoration: none;
         color: #000;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
         }
@@ -71,8 +76,8 @@ nav {
 }
 
 .separator {
-	margin-top: 20px;
-	margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     color: #7e085a;
     display: inline-block;
@@ -84,14 +89,14 @@ nav {
 }
 
 .separator::before {
-	background-color: #fff;
+    background-color: #fff;
     display: inline-block;
     min-width: 100px;
     content: "";
 }
 
 .separator::after {
-	content: "";
+    content: "";
     position: absolute;
     left: -100%;
     border-top: 2px solid rgba(126, 8, 90, 0.6);
@@ -100,19 +105,14 @@ nav {
     z-index: -1;
 }
 
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-	#wrapper {
-		font-size: 9px;
-	}
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #wrapper {
+        font-size: 9px;
+    }
 }
 
-@media only screen
-  and (min-device-height: 320px)
-  and (max-device-height: 480px) {
-	#wrapper {
-		font-size: 9px;
-	}
+@media only screen and (min-device-height: 320px) and (max-device-height: 480px) {
+    #wrapper {
+        font-size: 9px;
+    }
 }

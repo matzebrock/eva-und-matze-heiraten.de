@@ -1,24 +1,24 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Image } from '../interfaces/image.interface';
-import { ListService } from './list.service';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Image } from "../interfaces/image.interface";
+import { ListService } from "./list.service";
 import {
     trigger,
     state,
     style,
     animate,
     transition
-} from '@angular/animations';
+} from "@angular/animations";
 
 @Component({
-    selector: 'app-list',
-    templateUrl: './list.component.html',
-    styleUrls: ['./list.component.scss'],
+    selector: "app-list",
+    templateUrl: "./list.component.html",
+    styleUrls: ["./list.component.scss"],
     animations: [
-        trigger('visibilityChanged', [
-            state('1', style({ opacity: 1 })),
-            state('0', style({ opacity: 0 })),
-            transition('1 => 0', animate('500ms')),
-            transition('0 => 1', animate('500ms'))
+        trigger("visibilityChanged", [
+            state("1", style({ opacity: 1 })),
+            state("0", style({ opacity: 0 })),
+            transition("1 => 0", animate("500ms")),
+            transition("0 => 1", animate("500ms"))
         ])
     ]
 })
@@ -29,8 +29,7 @@ export class ListComponent implements OnInit, OnDestroy {
     public toggler: boolean;
     private imageInterval: number;
 
-    constructor(private listService: ListService) {
-    }
+    constructor(private listService: ListService) {}
 
     public ngOnInit(): void {
         this.listService.fetchImages().subscribe(images => {

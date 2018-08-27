@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from '~environments/environment';
+import { Component, OnInit } from "@angular/core";
+import { environment } from "~environments/environment";
 
 @Component({
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-    constructor() {
-    }
+    constructor() {}
 
-    public ngOnInit(): void {
-
-    }
-
+    public ngOnInit(): void {}
 }

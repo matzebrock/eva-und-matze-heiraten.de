@@ -1,1 +1,9 @@
-<image-upload [url]="uploadUrl" [extensions]="['jpeg','png', 'jpg', 'gif']" [buttonCaption]="'Bilder auswählen'" [dropBoxMessage]="''" [beforeUpload]="onBeforeUpload"></image-upload>
+<h3>Bilder hochladen</h3>
+<form name="bla">
+    <select name="uploaderName" id="uploaderName" [(ngModel)]="form.uploaderName">
+        <option *ngFor="let uploader of uploaders" [value]="uploader.value" [innerHTML]="uploader.label"></option>
+    </select>
+
+    <image-upload *ngIf="form.uploaderName" [url]="uploadUrl" [extensions]="['jpeg','png', 'jpg', 'gif']" [buttonCaption]="'Bilder auswählen'" [dropBoxMessage]="''"
+        [beforeUpload]="onBeforeUpload"></image-upload>
+</form>

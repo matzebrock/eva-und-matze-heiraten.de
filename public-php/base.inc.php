@@ -13,7 +13,7 @@ function getClient()
 {
     $client = new Google_Client();
     $client->setApplicationName('Google Drive API PHP Quickstart');
-    $client->setScopes(Google_Service_Drive::DRIVE_METADATA_READONLY);
+    $client->setScopes(Google_Service_Drive::DRIVE);
     $client->setAuthConfig('config/credentials.json');
     $client->setAccessType('offline');
 
@@ -26,7 +26,7 @@ function getClient()
         // Request authorization from the user.
         $authUrl = $client->createAuthUrl();
         printf("Open the following link in your browser:\n%s\n", $authUrl);
-        $authCode = '4/AACLtne9qEingVcrvB_LeqlZXr61xHody98I5HpwtQdkQCo2NuYsAIg';
+        $authCode = '4/RwAAT5yMol0MDGe6OroWcuXqkCgEKtlcsTQ2K4gQwop1_cEDTt0ujbc';
 
         // Exchange authorization code for an access token.
         $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);

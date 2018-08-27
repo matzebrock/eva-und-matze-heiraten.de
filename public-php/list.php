@@ -9,7 +9,7 @@ $output = [];
 $pageToken = null;
 do {
     $response = $driveService->files->listFiles(array(
-        'q' => sprintf("'%s' in parents", UPLOAD_FOLDER_ID),
+        'q' => sprintf("'%s' in parents and trashed = false", UPLOAD_FOLDER_ID),
         'spaces' => 'drive',
         'pageToken' => $pageToken,
         'fields' => 'nextPageToken, files(*)',
