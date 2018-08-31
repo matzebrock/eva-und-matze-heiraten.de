@@ -1,9 +1,6 @@
 cd public;
 rm -rf php;
+ln -s ../public-php php;
 cd ..;
 
 ng build -c production;
-
-cd public;
-cp -R ../public-php php;
-cd ..;

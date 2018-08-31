@@ -1,4 +1,4 @@
-public-php/config/*
+public-php/config/*.json
 public-php/vendor
 public-php/info.php
 public/
