@@ -11,11 +11,13 @@ import { HomeComponent } from "./home/home.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CanActivateGuard } from "./guards/can-activate.guard";
 import { FormsModule } from "@angular/forms";
-import { LocationComponent } from './location/location.component';
+import { LocationComponent } from "./location/location.component";
+import { ScheduleComponent } from "./schedule/schedule.component";
 
 const appRoutes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "location", component: LocationComponent },
+    { path: "schedule", component: ScheduleComponent },
     { path: "list", component: ListComponent, canActivate: [CanActivateGuard] },
     { path: "upload", component: UploadComponent },
 
@@ -23,13 +25,20 @@ const appRoutes: Routes = [
         path: "",
         redirectTo: "/home",
         pathMatch: "full"
-    }
+    },
 
-    // {path: '**', component: PageNotFoundComponent}
+    { path: "**", component: HomeComponent }
 ];
 
 @NgModule({
-    declarations: [AppComponent, LocationComponent, ListComponent, UploadComponent, HomeComponent],
+    declarations: [
+        AppComponent,
+        LocationComponent,
+        ListComponent,
+        ScheduleComponent,
+        UploadComponent,
+        HomeComponent
+    ],
     imports: [
         FormsModule,
         BrowserModule,

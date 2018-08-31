@@ -1,5 +1,6 @@
 public-php/config/*
 public-php/vendor
+public-php/info.php
 public/
 yarn-error.log
 .history

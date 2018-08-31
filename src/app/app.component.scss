@@ -5,61 +5,73 @@
     right: 0;
     top: 0;
     font-size: 16px;
+    background: url(/assets/background.jpg) no-repeat center #{-10rem}/ contain transparent;
+    font-family: "Quicksand", sans-serif;
+    user-select: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(#fff, 0.4);
+        z-index: 0;
+    }
 }
 
 header {
-    height: 300px;
-    width: 100%;
-    background: url(/assets/header-background.jpg) no-repeat center bottom
-        #7e085a;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    font-family: "Parisienne", cursive;
-    flex-wrap: wrap;
     position: relative;
-}
+    z-index: 1;
+    font-family: "Rouge Script", cursive;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 
-h1,
-::ng-deep h1 {
-    color: #fff;
-    font-size: 6em;
-    align-self: center;
-    display: inline-flex;
-    text-align: center;
-}
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-width: 75rem;
+        margin: 0 auto;
+    }
 
-h2,
-::ng-deep h2 {
-    font-size: 2.5em;
-    line-height: 1.7em;
-    color: #7e085a;
-}
+    span {
+        text-shadow: 1px 1px 0 #aaa, 0 0 5rem #000;
+        color: #000;
+        font-size: 2rem;
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.2rem;
+        position: relative;
+        top: 0.2rem;
 
-h3,
-::ng-deep h3 {
-    font-size: 1.7em;
-    color: #7e085a;
-    line-height: 1.7em;
+        &::before {
+            content: "";
+            background: url(/assets/logo.png) no-repeat center center/contain
+                transparent;
+            width: 2rem;
+            height: 2.615rem;
+            display: inline-block;
+            margin-right: 1rem;
+            position: relative;
+            bottom: 0.5rem;
+        }
+    }
 }
 
 nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     align-self: flex-end;
     text-align: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    justify-content: flex-end;
+    margin-right: -1.2rem;
 
     a {
-        padding: 10px 20px 5px 20px;
-        font-size: 2em;
+        padding: 0.75rem 1.2rem 0.5rem 1.2rem;
+        font-size: 2rem;
         text-decoration: none;
         color: #000;
+        text-shadow: 0 0 5rem #000;
 
         &:hover,
         &.active {
@@ -69,42 +81,86 @@ nav {
     }
 }
 
-.content {
-    display: block;
+main {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    font-size: 2em;
+    width: 75rem;
+    margin: 2rem auto 2rem auto;
+
+    h1,
+    ::ng-deep h1 {
+        font-size: 3rem;
+        display: flex;
+        text-align: center;
+        position: relative;
+        white-space: nowrap;
+        align-items: center;
+        padding: 0 5rem;
+        color: rgba(126, 8, 90, 0.6);
+        font-family: "Rouge Script", cursive;
+        margin-bottom: 2rem;
+
+        &::before,
+        &::after {
+            content: "";
+            display: inline-block;
+            background-color: rgba(126, 8, 90, 0.6);
+            height: 0.125rem;
+            width: 100%;
+            margin: 0 2rem;
+        }
+    }
+
+    p,
+    ::ng-deep p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
 }
 
-.separator {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.separator,
+::ng-deep .separator {
+    margin: 3rem 0;
+    padding: 0 5rem;
     position: relative;
     color: #7e085a;
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    font: normal normal normal 1rem/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    span {
+        font-size: inherit;
+
+        &::before {
+            content: "";
+        }
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        background-color: rgba(126, 8, 90, 0.6);
+        height: 0.125rem;
+        width: 100%;
+        margin: 0 2rem;
+    }
 }
 
-.separator::before {
-    background-color: #fff;
-    display: inline-block;
-    min-width: 100px;
-    content: "";
+strong,
+::ng-deep strong {
+    font-weight: 700;
+    font-family: "Rouge Script", cursive;
+    font-size: 2rem;
 }
 
-.separator::after {
-    content: "";
-    position: absolute;
-    left: -100%;
-    border-top: 2px solid rgba(126, 8, 90, 0.6);
-    width: 300%;
-    top: 50%;
-    z-index: -1;
-}
-
+/*
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     #wrapper {
         font-size: 9px;
@@ -116,3 +172,4 @@ nav {
         font-size: 9px;
     }
 }
+ */

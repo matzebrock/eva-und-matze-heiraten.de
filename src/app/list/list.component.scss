@@ -6,6 +6,7 @@
     bottom: 0;
     background: #000;
     font-size: 16px;
+    z-index: 999;
 }
 
 .close {
@@ -38,10 +39,16 @@
     .meta {
         position: absolute;
         left: 50%;
+        width: 100%;
+        padding: 0.125rem 0;
         bottom: 0;
         background: rgba(#fff, 0.5);
         transform: translate(-50%, 100%);
-        font-family: Lato;
-        font-size: 1em;
+        font-size: 1.2em;
+
+        .name {
+            font-weight: 700;
+            margin-right: 2rem;
+        }
     }
 }

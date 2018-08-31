@@ -8,6 +8,7 @@ import {
     animate,
     transition
 } from "@angular/animations";
+import { uploaders } from "../app.constants";
 
 @Component({
     selector: "app-list",
@@ -77,5 +78,21 @@ export class ListComponent implements OnInit, OnDestroy {
                 this.image1Index = 0;
             }
         }
+    }
+
+    public getUploader(image: Image): string {
+        const slug = image.name.split("_")[0];
+
+        if (!slug) {
+            return "";
+        }
+
+        const uploader = uploaders.find(u => u.value === slug);
+
+        if (!uploader) {
+            return "";
+        }
+
+        return uploader.label;
     }
 }

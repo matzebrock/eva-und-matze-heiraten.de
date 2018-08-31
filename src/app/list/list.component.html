@@ -3,13 +3,15 @@
 <ng-container *ngIf="images.length">
     <div [@visibilityChanged]="toggler" class="image" [style.width.px]="image1.width" [style.height.px]="image1.width" [style.background-image]="image1.style">
         <div class="meta">
-            {{ image1.name }} - {{ image1.created | date:'shortTime' }}
+            <span class="name" [innerHTML]="getUploader(image1)"></span>
+            <span class="time">{{ image1.created | date:'medium' }}</span>
         </div>
     </div>
 
     <div [@visibilityChanged]="!toggler" class="image" [style.width.px]="image2.width" [style.height.px]="image2.width" [style.background-image]="image2.style">
         <div class="meta">
-            {{ image2.name }} - {{ image2.created | date:'shortTime' }}
+            <span class="name" [innerHTML]="getUploader(image2)"></span>
+            <span class="time">{{ image2.created | date:'medium' }}</span>
         </div>
     </div>
 </ng-container>

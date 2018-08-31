@@ -1,19 +1,20 @@
 <header>
-    <h1>Eva und Matze heiraten</h1>
+    <div class="header-wrapper">
+        <span>Eva und Matze heiraten</span>
 
-    <nav>
-        <a routerLink="/home" routerLinkActive="active">Startseite</a>
-        <a routerLink="/location" routerLinkActive="active">Anfahrt</a>
-        <a routerLink="/ablauf" routerLinkActive="active">Ablauf</a>
-        <a routerLink="/upload" routerLinkActive="active">Bilder hochladen</a>
+        <nav>
+            <a routerLink="/home" routerLinkActive="active">Startseite</a>
+            <a routerLink="/location" routerLinkActive="active">Anfahrt</a>
+            <a routerLink="/schedule" routerLinkActive="active">Ablauf</a>
+            <a routerLink="/upload" routerLinkActive="active">Bilder hochladen</a>
 
-        <a routerLink="/list" routerLinkActive="active">List</a>
-    </nav>
+            <a routerLink="/list" routerLinkActive="active" *ngIf="isAuthInStorage">List</a>
+        </nav>
+    </div>
 </header>
 
-<div class="content">
-    <main>
-        <router-outlet></router-outlet>
-        <div class="separator"></div>
-    </main>
-</div>
+<main>
+    <router-outlet></router-outlet>
+
+    <div class="separator"><span></span></div>
+</main>
