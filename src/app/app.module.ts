@@ -46,7 +46,8 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         ImageUploadModule.forRoot(),
         RouterModule.forRoot(appRoutes, {
-            enableTracing: true
+            enableTracing: true,
+            useHash: true,
         })
     ],
     providers: [

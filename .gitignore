@@ -1,7 +1,8 @@
 public-php/config/*.json
 public-php/vendor
 public-php/info.php
-public/
+public/*
 yarn-error.log
 .history
 node_modules
+bak

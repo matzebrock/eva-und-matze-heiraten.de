@@ -4,21 +4,9 @@
     bottom: 0;
     right: 0;
     top: 0;
-    font-size: 16px;
     background: url(/assets/background.jpg) no-repeat center #{-10rem}/ contain transparent;
     font-family: "Quicksand", sans-serif;
     user-select: none;
-
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(#fff, 0.4);
-        z-index: 0;
-    }
 }
 
 header {
@@ -85,7 +73,8 @@ main {
     position: relative;
     z-index: 1;
     text-align: center;
-    width: 75rem;
+    max-width: 75rem;
+    width: 100%;
     margin: 2rem auto 2rem auto;
 
     h1,
@@ -159,17 +148,3 @@ strong,
     font-family: "Rouge Script", cursive;
     font-size: 2rem;
 }
-
-/*
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #wrapper {
-        font-size: 9px;
-    }
-}
-
-@media only screen and (min-device-height: 320px) and (max-device-height: 480px) {
-    #wrapper {
-        font-size: 9px;
-    }
-}
- */
