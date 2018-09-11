@@ -1,9 +1,23 @@
+@import "../../mixins";
+
+:host {
+    display: block;
+
+    @include mobile {
+        padding: 0 0.5rem;
+    }
+}
+
 form {
     margin: 2rem 7rem 1rem 7rem;
     font-size: 1.2rem;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+
+    @include mobile {
+        flex-wrap: wrap;
+    }
 
     .select-wrapper {
         background: #fff;
@@ -95,12 +109,28 @@ form {
         width: 50%;
         height: 7.5rem;
         flex-wrap: wrap;
+
+        @include mobile {
+            width: 100%;
+            flex-direction: column;
+            height: auto;
+            margin-bottom: 1.5rem;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+        }
     }
 
     .right {
         border-left: 2px solid rgba(126, 8, 90, 0.3);
         display: flex;
         width: 50%;
+
+        @include mobile {
+            border-left: 0;
+            width: 100%;
+        }
 
         &.loading {
             image-upload {

@@ -1,8 +1,15 @@
+@import "../../mixins";
+
 .content {
     font-size: 1.2rem;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+
+    @include mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .left {
@@ -13,6 +20,13 @@
     border-right: 2px solid rgba(126, 8, 90, 0.3);
     padding-right: 3rem;
 
+    @include mobile {
+        padding-right: 0;
+        border-right: 0;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
     .map {
         width: 30rem;
         height: 30rem;
@@ -22,6 +36,10 @@
             height: inherit;
         }
     }
+
+    @include mobile {
+        flex-basis: 100%;
+    }
 }
 
 .right {
@@ -29,4 +47,8 @@
     align-items: center;
     flex-direction: column;
     flex: 1;
+
+    @include mobile {
+        flex-basis: 100%;
+    }
 }
