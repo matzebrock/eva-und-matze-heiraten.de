@@ -1,20 +1,33 @@
 <header>
-    <div class="header-wrapper">
-        <span>Eva und Matze heiraten</span>
-
-        <nav>
-            <a routerLink="/home" routerLinkActive="active">Startseite</a>
-            <a routerLink="/location" routerLinkActive="active">Anfahrt</a>
-            <a routerLink="/schedule" routerLinkActive="active">Ablauf</a>
-            <a routerLink="/upload" routerLinkActive="active">Bilder hochladen</a>
-
-            <a routerLink="/list" routerLinkActive="active" *ngIf="isAuthInStorage">List</a>
-        </nav>
-    </div>
+  <h1>Sophie &amp; Heiko</h1>
 </header>
 
 <main>
-    <router-outlet></router-outlet>
+  <form>
+    <label for="file">
+      Wir freuen uns über eure Schnappschüsse. Bitte ladet die Bilder und Videos hier hoch.
+    </label>
+    <input
+      [disabled]="currentFile > 0"
+      id="file"
+      name="file"
+      type="file"
+      #input
+      multiple
+      (change)="onFileSelected($event)"
+    />
 
-    <div class="separator"><span></span></div>
+    <div class="progress" *ngIf="currentFile > 0">
+      <progress min="0" max="100" [value]="done ? 100 : uploadProgress"></progress>
+      <span>
+        Datei: {{ currentFile }} von {{ totalFiles }}.
+        Fortschritt: {{ done ? 100 : uploadProgress }}%.
+      </span>
+
+      <div *ngIf="done" class="message">
+        <strong>Upload erfolgreich.</strong><br />
+        Du kannst nun weitere Bilder &amp; Videos hochladen.
+      </div>
+    </div>
+  </form>
 </main>
