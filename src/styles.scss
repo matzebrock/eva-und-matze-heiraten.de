@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./mixins";
+@import "reset-css";
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@300&display=swap');
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    font-size: 10px;
+  }
+}
